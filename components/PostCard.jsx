@@ -10,7 +10,7 @@ export default function PostCard() {
 
   return (
     <>
-      <div className='container grid grid-cols-1 mx-auto items-center px-4 md:px-10 pt-16 gap-10 md:grid-cols-2'>
+      <div className='container grid grid-cols-1 mx-auto items-center px-4 md:px-10 pt-10 md:pt-16 gap-16 md:grid-cols-2'>
         {posts.map((post) => (
           <div className=''>
             <div className=''>

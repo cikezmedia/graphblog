@@ -31,7 +31,7 @@ export default function Header() {
     <>
       <div className='flex items-center mx-auto bg-white dark:bg-gray-900'>
         {/* desktop */}
-        <div className='hidden container justify-between mx-auto px-4 mt-6 border-b pb-6 border-light-blue md:flex flex-row'>
+        <div className='hidden container items-center justify-between mx-auto px-4 mt-6 border-b pb-6 border-light-blue dark:border-gray-900 md:flex flex-row'>
           <div>
             <Link href='/'>
               <Image
@@ -43,30 +43,30 @@ export default function Header() {
               />
             </Link>
           </div>
-          <div className='space-x-8 pb-1'>
-            {categories.map((category) => (
-              <Link href={category.slug} key={category.name}>
-                <a
-                  className={`font-semibold font-montserrat md:text-lg ${
-                    pathname == `${category.slug}`
-                      ? 'text-green'
-                      : 'text-dark-blue dark:text-white'
-                  } cursor-pointer hover:text-green transition duration-500 ease `}
-                >
-                  {category.name}
-                </a>
-              </Link>
-            ))}
-          </div>
-          <div className='pt-2'>
-            <SearchIcon className='w-6 h-6 text-dark-blue dark:text-white' />
+          <div className='flex flex-row items-center pt-2'>
+            <div className='space-x-8 pb-1 pr-20'>
+              {categories.map((category) => (
+                <Link href={category.slug} key={category.name}>
+                  <a
+                    className={`font-semibold font-montserrat md:text-lg ${
+                      pathname == `${category.slug}`
+                        ? 'text-green'
+                        : 'text-dark-blue dark:text-white'
+                    } cursor-pointer hover:text-green transition duration-500 ease `}
+                  >
+                    {category.name}
+                  </a>
+                </Link>
+              ))}
+            </div>
+            <SearchIcon className='w-6 h-6 text-dark-blue cursor-pointer dark:text-white' />
           </div>
         </div>
       </div>
 
       {/* Mobile */}
       <div className='block md:hidden bg-white dark:bg-gray-900'>
-        <div className='flex justify-between mx-auto px-4 pt-6 border-b pb-6 border-light-blue'>
+        <div className='flex justify-between mx-auto px-4 pt-6 border-b pb-6 border-light-blue dark:border-gray-900'>
           <Link href='/'>
             <Image
               src='/logo-white.png'
