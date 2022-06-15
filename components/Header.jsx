@@ -69,7 +69,7 @@ export default function Header() {
         <div className='flex justify-between mx-auto px-4 pt-6 border-b pb-6 border-light-blue'>
           <Link href='/'>
             <Image
-              src='/logo.png'
+              src='/logo-white.png'
               width={130}
               height={30}
               alt='Graph News logo'
@@ -78,9 +78,9 @@ export default function Header() {
           </Link>
           <button onClick={navMenu} className=''>
             {active ? (
-              <XIcon className='w-8 h-8 text-dark-blue ' />
+              <XIcon className='w-8 h-8 text-dark-blue dark:text-white' />
             ) : (
-              <MenuAlt3Icon className='w-8 h-8 text-dark-blue ' />
+              <MenuAlt3Icon className='w-8 h-8 text-dark-blue dark:text-white' />
             )}
           </button>
         </div>
