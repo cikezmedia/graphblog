@@ -29,13 +29,13 @@ export default function Header() {
 
   return (
     <>
-      <div className='flex items-center mx-auto dark:bg-gray-900'>
+      <div className='flex items-center mx-auto bg-white dark:bg-gray-900'>
         {/* desktop */}
         <div className='hidden container justify-between mx-auto px-4 mt-6 border-b pb-6 border-light-blue md:flex flex-row'>
           <div>
             <Link href='/'>
               <Image
-                src='/logo.png'
+                src='/logo-white.png'
                 width={130}
                 height={30}
                 alt='Graph News logo'
@@ -50,7 +50,7 @@ export default function Header() {
                   className={`font-semibold font-montserrat md:text-lg ${
                     pathname == `${category.slug}`
                       ? 'text-green'
-                      : 'text-dark-blue'
+                      : 'text-dark-blue dark:text-white'
                   } cursor-pointer hover:text-green transition duration-500 ease `}
                 >
                   {category.name}
@@ -59,13 +59,13 @@ export default function Header() {
             ))}
           </div>
           <div className='pt-2'>
-            <SearchIcon className='w-6 h-6 text-dark-blue' />
+            <SearchIcon className='w-6 h-6 text-dark-blue dark:text-white' />
           </div>
         </div>
       </div>
 
       {/* Mobile */}
-      <div className='block md:hidden'>
+      <div className='block md:hidden bg-white dark:bg-gray-900'>
         <div className='flex justify-between mx-auto px-4 pt-6 border-b pb-6 border-light-blue'>
           <Link href='/'>
             <Image
