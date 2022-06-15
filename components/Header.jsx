@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <>
-      <div className='flex items-center mx-auto'>
+      <div className='flex items-center mx-auto dark:bg-gray-900'>
         {/* desktop */}
         <div className='hidden container justify-between mx-auto px-4 mt-6 border-b pb-6 border-light-blue md:flex flex-row'>
           <div>
