@@ -23,7 +23,7 @@ export async function getPosts() {
             }
             createdAt
             id
-            categories {
+            categories(first: 2) {
               slug
               name
             }
