@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { HeroCard, AdvertCard, PostCard } from '../components';
+import { HeroCard, AdvertCard, PostCard, Footer } from '../components';
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <HeroCard />
       <AdvertCard />
       <PostCard />
+      <Footer />
     </>
   );
 }

@@ -21,7 +21,7 @@ export default function AdvertCard() {
   ];
   return (
     <>
-      <div className='bg-gradient-to-l from-gray-100 to-light-blue p-6 mt-4 md:mt-10'>
+      <div className='hidden md:block bg-gradient-to-l from-gray-100 to-light-blue p-6 mt-4 md:mt-10'>
         <h3 className='text-2xl mt-4 mb-6 md:text-4xl text-dark-blue font-montserrat font-medium mx-auto items-center text-center'>
           Latest Gallery
         </h3>

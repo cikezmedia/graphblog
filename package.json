@@ -12,6 +12,7 @@
     "graphql-request": "^4.2.0",
     "html-react-parser": "^1.4.12",
     "install": "^0.13.0",
+    "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "next": "latest",
     "react": "18.1.0",

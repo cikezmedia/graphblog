@@ -1,5 +1,4 @@
 import moment from 'moment';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { getFeatured, getPosts2, getSecondFeatured } from '../services';
@@ -9,7 +8,6 @@ import { StarIcon } from '@heroicons/react/solid';
 export default function HeroCard() {
   const [featuredPost, setFeaturedPost] = useState([]);
   const [secondFeaturedPost, setSecondFeaturedPost] = useState([]);
-
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {

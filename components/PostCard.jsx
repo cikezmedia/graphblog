@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { getPosts } from '../services';
+import { Pagination } from '../components';
+import { paginate } from '../utils/paginate';
 import { MdOutlineStickyNote2 } from 'react-icons/md';
 import Link from 'next/link';
 import { BiTime } from 'react-icons/bi';
@@ -13,18 +15,34 @@ const myLoader = ({ src, width, quality }) => {
 export default function PostCard() {
   const [posts, setPosts] = useState([]);
 
+  const pageSize = 2;
+  const [currentPage, setCurrentPage] = useState(1);
+
   useEffect(() => {
     getPosts().then((result) => setPosts(result));
   }, []);
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const paginatePosts = paginate(posts, currentPage, pageSize);
+
   return (
     <>
-      <div className='container mx-auto justify-between items-center'>
-        <span className='flex flex-col text-dark-blue font-montserrat text-2xl font-medium pt-8 md:text-4xl text-center items-center mx-auto'>
-          Latest Blog
-        </span>
+      <div
+        className={`container mx-auto bg-blue-100 md:bg-white mt-5 md:mt-0 justify-between items-center`}
+      >
+        <div className='flex flex-col gap-3 text-center items-center mx-auto'>
+          <span className='text-dark-blue font-montserrat text-2xl font-medium pt-8 border-b pb-2 border-dark-blue md:text-4xl '>
+            Latest Blog
+          </span>
+          <span className='text-sm md:text-lg text-gray-400'>
+            Read our latest blog post below
+          </span>
+        </div>
         <div className='grid grid-cols-1 mx-auto justify-between px-4 md:px-36 before: gap-x-10 md:gap-x-20 gap-y-10 pt-10 lg:grid-cols-2'>
-          {posts.map((post, index) => (
+          {paginatePosts.map((post, index) => (
             <div className='bg-gray-100 rounded-xl relative' key={index}>
               <div className=''>
                 <Image
@@ -74,6 +92,12 @@ export default function PostCard() {
             </div>
           ))}
         </div>
+        <Pagination
+          items={posts.length}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        />
       </div>
     </>
   );
