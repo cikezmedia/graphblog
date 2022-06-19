@@ -33,20 +33,22 @@ export default function Header() {
         {/* desktop */}
         <div className='hidden container items-center justify-between mx-auto px-4 mt-6 border-b pb-6 border-light-blue dark:border-gray-900 md:flex flex-row'>
           <div>
-            <Link href='/'>
-              <Image
-                src='/logo-white.png'
-                width={130}
-                height={30}
-                alt='Graph News logo'
-                className='cursor-pointer'
-              />
+            <Link href='/' passHref>
+              <a>
+                <Image
+                  src='/logo-white.png'
+                  width={130}
+                  height={30}
+                  alt='Graph News logo'
+                  className='cursor-pointer'
+                />
+              </a>
             </Link>
           </div>
           <div className='flex flex-row items-center pt-2'>
             <div className='space-x-8 pb-1 pr-20'>
               {categories.map((category) => (
-                <Link href={category.slug} key={category.name}>
+                <Link href={category.slug} key={category.name} passHref>
                   <a
                     className={`font-semibold font-montserrat md:text-lg ${
                       pathname == `${category.slug}`
@@ -67,14 +69,16 @@ export default function Header() {
       {/* Mobile */}
       <div className='block md:hidden bg-white dark:bg-gray-900'>
         <div className='flex justify-between mx-auto px-4 pt-6 border-b pb-6 border-light-blue dark:border-gray-900'>
-          <Link href='/'>
-            <Image
-              src='/logo-white.png'
-              width={130}
-              height={30}
-              alt='Graph News logo'
-              className='cursor-pointer'
-            />
+          <Link href='/' passHref>
+            <a>
+              <Image
+                src='/logo-white.png'
+                width={130}
+                height={30}
+                alt='Graph News logo'
+                className='cursor-pointer'
+              />
+            </a>
           </Link>
           <button onClick={navMenu} className=''>
             {active ? (
@@ -96,14 +100,16 @@ export default function Header() {
               leaveTo='opacity-0 scale-95'
             >
               <div className='flex justify-between mx-auto px-4 mt-6 border-b pb-6 border-light-blue'>
-                <Link href='/'>
-                  <Image
-                    src='/logo.png'
-                    width={130}
-                    height={30}
-                    alt='Graph News logo'
-                    className='cursor-pointer'
-                  />
+                <Link href='/' passHref>
+                  <a>
+                    <Image
+                      src='/logo.png'
+                      width={130}
+                      height={30}
+                      alt='Graph News logo'
+                      className='cursor-pointer'
+                    />
+                  </a>
                 </Link>
                 <button onClick={navMenu} className=''>
                   {active ? (
@@ -115,7 +121,7 @@ export default function Header() {
               </div>
               <div className='flex flex-col items-center space-y-8  p-6 pt-36'>
                 {categories.map((category) => (
-                  <Link href={category.slug} key={category.name}>
+                  <Link href={category.slug} key={category.name} passHref>
                     <a
                       className={`font-semibold font-montserrat cursor-pointer hover:text-green transition duration-500 ease text-xl ${
                         pathname == `${category.slug}`

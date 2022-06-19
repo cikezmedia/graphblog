@@ -22,8 +22,8 @@ export default function HeroCard() {
     <>
       <div className='container mx-auto grid grid-cols-1 gap-6 md:gap-12 lg:grid-cols-12 mt-4 md:mt-10 px-4'>
         <div className='relative col-span-1 lg:col-span-8 rounded-md'>
-          {featuredPost.map((featured) => (
-            <div>
+          {featuredPost.map((featured, index) => (
+            <div key={index}>
               <span className='mb-6 overflow-hidden pb-80 shadow-md'>
                 <img
                   src={featured.node.featuredImage.url}
@@ -76,8 +76,11 @@ export default function HeroCard() {
           </div>
 
           <div className='flex flex-col md:space-y-10 space-y-6 pr-4'>
-            {posts.map((post) => (
-              <div className='flex flex-col border-l-2 pl-4 border-orange'>
+            {posts.map((post, index) => (
+              <div
+                className='flex flex-col border-l-2 pl-4 border-orange'
+                key={index}
+              >
                 <span className='text-md md:text-lg text-gray-600 hover:text-orange transition duration-500 ease'>
                   {post.node.title}
                 </span>
@@ -93,8 +96,8 @@ export default function HeroCard() {
             ))}
             {/* This is for the Last Blog post on the Hero Card. It is the second to the last Sticky Post from the Database */}
             <div className='hidden md:block flex-col'>
-              {secondFeaturedPost.map((secPost) => (
-                <div className='flex flex-col space-y-2'>
+              {secondFeaturedPost.map((secPost, index) => (
+                <div className='flex flex-col space-y-2' key={index}>
                   <img
                     src={secPost.node.featuredImage.url}
                     className='h-[200px] object-cover rounded-lg'
@@ -103,14 +106,14 @@ export default function HeroCard() {
                     {secPost.node.title}
                   </span>
                   <span>
-                    <Link href={`/post/${secPost.node.slug}`}>
+                    <Link href={`/post/${secPost.node.slug}`} passHref>
                       <a className='hover:text-gray-600 text-sm font-popping transition duration-500 ease'>
                         {secPost.node.excerpt.length > 100
                           ? secPost.node.excerpt.substring(0, 100) + `...`
                           : secPost.node.excerpt}
                       </a>
                     </Link>
-                    <Link href={`/post/${secPost.node.slug}`}>
+                    <Link href={`/post/${secPost.node.slug}`} passHref>
                       <a className='cursor-pointer text-orange justify-items-end'>
                         Read More
                       </a>

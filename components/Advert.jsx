@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import myAdvert from '../public/advert.jpg';
 
 export default function AdvertCard() {
   const imageSlide = [
@@ -28,20 +27,28 @@ export default function AdvertCard() {
         </h3>
         <div className='hidden md:block'>
           <div className='flex flex-col md:flex-row justify-between mx-auto items-center px-4 mt-10 mb-10'>
-            {imageSlide.map((imgs) => (
-              <div key={imgs} className='px-2'>
-                <img
+            {imageSlide.map((imgs, index) => (
+              <div key={index} className='px-2'>
+                <Image
                   src={imgs.name}
-                  className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 h-[220px] w-[320px] shadow-lg rounded-lg object-cover'
+                  width={320}
+                  height={220}
+                  alt='Advert banner'
+                  className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 shadow-lg rounded-lg object-cover'
+                  priority
                 />
               </div>
             ))}
           </div>
         </div>
         <div className='md:hidden mb-6'>
-          <img
+          <Image
             src='/image/img5.jpg'
+            width={500}
+            height={250}
+            alt='advert banner'
             className='h-[250px] w-[500px] rounded-lg object-cover'
+            priority
           />
         </div>
       </div>

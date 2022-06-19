@@ -23,6 +23,10 @@ export async function getPosts() {
             }
             createdAt
             id
+            categories {
+              slug
+              name
+            }
           }
         }
       }
@@ -81,6 +85,10 @@ export async function getSecondFeatured() {
             }
             createdAt
             id
+            categories {
+              slug
+              name
+            }
           }
         }
       }
