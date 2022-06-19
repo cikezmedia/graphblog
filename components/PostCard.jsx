@@ -31,7 +31,7 @@ export default function PostCard() {
   return (
     <>
       <div
-        className={`container mx-auto bg-blue-100 md:bg-white mt-5 md:mt-0 justify-between items-center`}
+        className={`container mx-auto bg-blue-100 md:bg-white mt-5 md:mt-0 justify-between items-center pb-16`}
       >
         <div className='flex flex-col gap-3 text-center items-center mx-auto'>
           <span className='text-dark-blue font-montserrat text-2xl font-medium pt-8 border-b pb-2 border-dark-blue md:text-4xl '>
@@ -43,7 +43,7 @@ export default function PostCard() {
         </div>
         <div className='grid grid-cols-1 mx-auto justify-between px-4 md:px-36 before: gap-x-10 md:gap-x-20 gap-y-10 pt-10 lg:grid-cols-2'>
           {paginatePosts.map((post, index) => (
-            <div className='bg-gray-100 rounded-xl relative' key={index}>
+            <div className='bg-blue-50 rounded-xl relative' key={index}>
               <div className=''>
                 <Image
                   loader={myLoader}
