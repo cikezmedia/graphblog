@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { getPosts } from '../services';
-//import { Pagination } from '../components';
-//import { paginate } from '../utils/paginate';
+import { Pagination } from '../components';
+import { paginate } from '../utils/paginate';
 import { MdOutlineStickyNote2 } from 'react-icons/md';
 import Link from 'next/link';
 import { BiTime } from 'react-icons/bi';
@@ -15,19 +15,18 @@ const myLoader = ({ src, width, quality }) => {
 export default function PostCard() {
   const [posts, setPosts] = useState([]);
 
-  const [pageSize, setPageSize] = useState(2);
+  const pageSize = 2;
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     getPosts().then((result) => setPosts(result));
   }, []);
 
-  //const paginatePosts = paginate(posts, currentPage, pageSize);
-  const paginatePosts = posts.slice(0, pageSize);
-
-  const handleLoadMore = () => {
-    setPageSize(pageSize + 2);
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
   };
+
+  const paginatePosts = paginate(posts, currentPage, pageSize);
 
   return (
     <>
@@ -93,29 +92,12 @@ export default function PostCard() {
             </div>
           ))}
         </div>
-        {/* <Pagination
+        <Pagination
           items={posts.length}
           pageSize={pageSize}
           currentPage={currentPage}
           onPageChange={handlePageChange}
-        /> */}
-        {pageSize < 5 ? (
-          <button
-            onClick={handleLoadMore}
-            className='bg-dark-blue cursor-pointer text-white p-1 px-6 flex flex-col mx-auto text-sm rounded-lg mt-10'
-          >
-            Load More
-          </button>
-        ) : (
-          <button
-            href='/blog'
-            className='bg-dark-blue cursor-pointer text-white p-1 px-6 flex flex-col mx-auto text-sm rounded-lg mt-10'
-          >
-            <Link href='/blog' passHref>
-              <a>View All Posts</a>
-            </Link>
-          </button>
-        )}
+        />
       </div>
     </>
   );
