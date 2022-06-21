@@ -12,6 +12,9 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
+Create a .env.local file in your directory root and point your GraphCMS endpoint to 
+NEXT_PUBLIC_GRAPHCMS_ENDPOINT=your-graphcms-endpoint
+
 ```bash
 npx create-next-app --example with-tailwindcss with-tailwindcss-app
 # or
