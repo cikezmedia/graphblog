@@ -18,6 +18,10 @@ export default function Header() {
       slug: '/popular',
     },
     {
+      name: 'Blog',
+      slug: '/blog',
+    },
+    {
       name: 'Latest',
       slug: '/latest',
     },

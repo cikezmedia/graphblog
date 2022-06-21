@@ -5,3 +5,4 @@ export { default as AdvertCard } from './Advert';
 export { default as PostCard } from './PostCard';
 export { default as Pagination } from './Pagination';
 export { default as Footer } from './Footer';
+export { default as Loading } from './Loading';

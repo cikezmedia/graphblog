@@ -11,7 +11,6 @@ export default function Home() {
       <HeroCard />
       <AdvertCard />
       <PostCard />
-      <Footer />
     </>
   );
 }

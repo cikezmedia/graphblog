@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { getPosts } from '../services';
-//import { Pagination } from '../components';
-//import { paginate } from '../utils/paginate';
 import { MdOutlineStickyNote2 } from 'react-icons/md';
 import Link from 'next/link';
 import { BiTime } from 'react-icons/bi';
