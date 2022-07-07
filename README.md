@@ -1,6 +1,6 @@
 # Next.js - GraphCMS - TailwindCSS Blog
 
-This blog is built with [NextJS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js
+This blog is built with [TailwindCSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js
 
 You can view the Live link here
 [https://graphblog.vercel.app/](https://graphblog.vercel.app/)
